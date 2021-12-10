@@ -1,0 +1,22 @@
+name: Workflow
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  Debian:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Debian
+        run: curl --proto '=https' --tlsv1.2 -sSf https://raw.githubusercontent.com/StepBroBD/Automations/master/debian.sh | bash
+
+  macOS:
+    runs-on: macos-latest
+
+    steps:
+      - name: macOS
+        run: curl --proto '=https' --tlsv1.2 -sSf https://raw.githubusercontent.com/StepBroBD/Automations/master/macos.sh | zsh
